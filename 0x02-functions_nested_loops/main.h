@@ -1,1 +1,1 @@
-
+extern int n;
