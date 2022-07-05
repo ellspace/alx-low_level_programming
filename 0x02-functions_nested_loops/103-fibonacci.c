@@ -14,12 +14,12 @@ int main(void)
 	for (s = 2; s <= 32; s++)
 	{
 		if (z % 2 == 0)
-		{
+		
 			v = v + z;
 			x = y;
 			y = z;
 			z = x + y;
-		}
+		
 		printf("%u\n", v);
 		return (0);
 	}
