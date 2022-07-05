@@ -19,8 +19,8 @@ int main(void)
 			x = y;
 			y = z;
 			z = x + y;
-		
+	}		
 		printf("%u\n", v);
 		return (0);
-	}
+	
 }
