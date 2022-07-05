@@ -9,6 +9,8 @@
  */
 int main(void)
 {
+	print_alphabets(int);
+
 	int n;
 
 	for (n = 'a'; n <= 'z'; n++)
