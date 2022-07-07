@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * main - tests function
- * Return: 0
- */
-
+* main - a function that prints if integer is + || -
+*
+* Return: 0
+*/
 
 int main(void)
 {
