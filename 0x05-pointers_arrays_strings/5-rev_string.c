@@ -2,13 +2,12 @@
 #include "main.h"
 
 /**
- *rev_string - update value.
+ *rev_string - a function that reverses a string.
  *
- *@s: value to be evaluate.
+ *@s: value.
  *
  *Return: 0
  */
-
 void rev_string(char *s)
 {
 	int b = 0;
