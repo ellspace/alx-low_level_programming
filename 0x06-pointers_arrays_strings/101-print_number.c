@@ -1,13 +1,11 @@
 #include "main.h"
 
 
-
 /**
- * print_number -function print an integer, without using long/arrays/pointers
+ * print_number - print integer, without using long/arrays/pointers
  *
  * @n: number to be printed
  */
-
 void print_number(int n)
 {
 
