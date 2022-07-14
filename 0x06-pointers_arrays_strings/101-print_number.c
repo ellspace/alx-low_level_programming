@@ -1,14 +1,12 @@
 #include "main.h"
 
-
 /**
- * print_number - print integer, without using long/arrays/pointers
+ * print_number - print an integer, without using long, arrays, or pointers
  *
  * @n: number to be printed
  */
 void print_number(int n)
 {
-
 	unsigned int tens, dig, pos = n;
 	double temp_tens = 1;
 
@@ -24,7 +22,6 @@ void print_number(int n)
 		while (temp_tens <= pos)
 			temp_tens *= 10;
 		tens = temp_tens / 10;
-
 		while (tens >= 1)
 		{
 			dig = pos / tens;
@@ -32,7 +29,5 @@ void print_number(int n)
 			pos = (pos - (tens * dig));
 			tens /= 10;
 		}
-
 	}
-
 }
