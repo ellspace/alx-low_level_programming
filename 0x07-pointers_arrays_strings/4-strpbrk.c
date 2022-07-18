@@ -10,7 +10,6 @@
  *
  * Return: pointer to index of string at first occurence
  */
-
 char *_strpbrk(char *s, char *accept)
 {
 	int i = 0, j;
