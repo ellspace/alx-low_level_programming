@@ -4,7 +4,7 @@
 
 
 /**
-* strtow -a F THAT splits a string into words.
+* strtow -af splits a string into words.
 *
 * @str: string to be splitted
 *
@@ -17,12 +17,9 @@ char **strtow(char *str)
 	int i, j, k = 0, l, m, count = 0, len;
 	char **words;
 
-
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
-
 	for (i = 0; str[i] != '\0'; i++)
-
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			count++;
 	if (count == 0)
