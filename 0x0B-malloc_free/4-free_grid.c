@@ -1,6 +1,7 @@
 #include "main.h"
 
 
+
 /**
  * free_grid - free a 2 dim array
  * previously created by your alloc_grid function
