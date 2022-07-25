@@ -5,26 +5,34 @@
 
 
 /**
- * create_array - aF that creates an array of char and initialize
- *
- * @size: size
- * @c: character
- *
- * Return: size == 0 ? NULL : array pinter
- */
+* create_array - function that creates an array of chars
+* and initializes it with a specific char
+*
+* @c: array of chars
+* @size: the size of the memory to print
+*
+* Return: address of the memory to print
+*/
 
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
-	char *array = malloc(sizeof(char) * size);
+	char *x;
 
-	if (size < 1 || array == NULL)
+	if (size == 0)
+
 		return (NULL);
 
-	for (i = 0; i < size; i++)
-		*(array + i) = c
+/* returns a pointer to the allocated memory */
+	x = malloc(size * sizeof(char));
+	if (x == NULL)
 
-	*(array + i) = END;
-
-	return (array);
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		x[i] = c;
+		i++;
+	}
+	return (x);
 }
