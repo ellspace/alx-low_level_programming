@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 /**
  * new_dog - create new data structure for dog
  *
