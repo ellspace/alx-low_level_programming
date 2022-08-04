@@ -3,94 +3,54 @@
 
 
 /**
- * print_all - prints anything
+ * print_all - sum of all parameters
  *
- * @format: list of types of args
+ * @format: arguments to function
  *
- * Return: void
+ * Return: sum
  */
+
 
 void print_all(const char * const format, ...)
 {
-	opt_t print[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-		{'\0', NULL}
-	};
-
-	va_list params;
-	int i, j;
-	char *sep = "";
+	va_list list;
+	unsigned int a = 0, b;
+	char *h;
 
 
-	va_start(params, format);
-	i = 0;
-	while (format[i])
+	while (format != NULL)
 	{
-		j = 0;
-		while (print[j].opt)
+		va_start(list, format);
+		while (format[a] != '\0')
 		{
-			if (print[j].opt == format[i])
+			b = 1;
+			switch (format[a])
 			{
-				printf("%s", sep);
-				print[j].meth(params);
-				sep = ", ";
+			case 'c':
+				printf("%c", va_arg(list, int));
+				break;
+			case 'i':
+				printf("%d", va_arg(list, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(list, double));
+				break;
+			case 's':
+				h = va_arg(list, char *);
+				if (h == NULL)
+					h = "(nil)";
+				printf("%s", h);
+				break;
+			default:
+				b = 0;
+				break;
 			}
-			j++;
+			if (format[a + 1] && b)
+				printf(", ");
+			a++;
 		}
-		i++;
+		va_end(list);
+		break;
 	}
-
-	va_end(params);
 	printf("\n");
-}
-
-/**
- * print_char - prints char
- *
- * @params: params
- */
-
-void print_char(va_list params)
-{
-
-	printf("%c", va_arg(params, int));
-
-}
-
-/**
- * print_int - prints int
- *
- * @params: params
- */
-
-void print_int(va_list params)
-{
-	printf("%d", va_arg(params, int));
-}
-
-/**
- * print_float - prints float
- *
- * @params: params
- */
-
-void print_float(va_list params)
-{
-	printf("%f", va_arg(params, double));
-}
-
-/**
- * print_string - prints string
- *
- * @params: params
- */
-void print_string(va_list params)
-{
-	char *s;
-
-	s = va_arg(params, char *);
-	printf("%s", s ? s : NIL);
 }
