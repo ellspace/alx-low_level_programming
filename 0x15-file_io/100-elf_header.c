@@ -6,9 +6,14 @@
 #include <unistd.h>
 #include <elf.h>
 
+
+
+
 /**
  * print_addr - prints address
+ *
  * @ptr: magic.
+ *
  * Return: no return.
  */
 void print_addr(char *ptr)
